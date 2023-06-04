@@ -23,7 +23,10 @@ public class Project251 {
         double height = scanner.nextDouble();
         System.out.print("Enter your weight in kilograms: ");
         double weight = scanner.nextDouble();
-        System.out.print("Enter your gender (M/F): ");
+        System.out.print("Enter your gender "
+                + "M: for male"
+                + "F: for female"
+                + "(M/F): ");
         String gender = scanner.next();
         System.out.print("Enter your rate of physical activity (1.25 for low activity || 1.725 for high activity): ");
         double rate = scanner.nextDouble();
