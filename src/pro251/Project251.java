@@ -64,7 +64,7 @@ public class Project251 {
             System.out.println("3. Display workouts");
             System.out.println("4. Display a selected workout");
             System.out.println("5. Display a diet plan");
-            System.out.println("6. Suscribe a GYM");
+            System.out.println("6. Subscribe a GYM");
             System.out.println("7. Quit");
 
             
