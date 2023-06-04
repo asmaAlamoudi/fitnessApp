@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pro251;
 
 import java.util.Scanner;
@@ -10,7 +6,7 @@ import java.util.Scanner;
 public class Project251 {
 
     /**
-     * @param args the command line arguments
+     * @Fitness app 
      */
     public static void main(String[] args) {
 
