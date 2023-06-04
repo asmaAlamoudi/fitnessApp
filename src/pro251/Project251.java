@@ -1,4 +1,4 @@
-/* Hi Reema
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -45,7 +45,15 @@ public class Project251 {
        
         int result = plans.Generate_Plan(calori);
         
+        GYMinfo[] GYMs = new GYMinfo[4];
         
+        GYMs[0] = new GYMinfo("Golds","for women and men","Jeddah",1999 );
+            
+        GYMs[1] = new GYMinfo("BeFit","for women and men","Jeddah",1500 );
+    
+        GYMs[2] = new GYMinfo("Fitness","for women and men","Jeddah",2500 );
+       
+        GYMs[3] = new GYMinfo("Strength","for women and men","Riyadh",2000 );
         Service service = new Service();
         
         String serviceNum= "";
@@ -56,7 +64,8 @@ public class Project251 {
             System.out.println("3. Display workouts");
             System.out.println("4. Display a selected workout");
             System.out.println("5. Display a diet plan");
-            System.out.println("6. Quit");
+            System.out.println("6. Suscribe a GYM");
+            System.out.println("7. Quit");
 
             
 
@@ -104,7 +113,12 @@ public class Project251 {
 
                     break;
 
-                case "6":
+               case "6":
+                    subscribe_GYM(result, scanner, GYMs);
+                    break;
+                
+                
+                case "7":
                     System.out.println("Exiting program...");
                     break;
                 default:
@@ -133,7 +147,159 @@ public class Project251 {
             System.out.println("Description :");
             System.out.println("Intermittent fasting diet involves fasting for some period of time in a day");
         }
+    
     }
+    
+     private static void subscribe_GYM(int result,Scanner scanner,GYMinfo[] GYMs) {
+       
+     // Display menu 
+    System.out.println("============================");
+    System.out.println("|   SUBSCRIBTION MENU      |");
+    System.out.println("============================");
+    System.out.println("|        1. Display avalible GYMs      |");
+    System.out.println("|        2. Display GYMs in my city    |");
+    System.out.println("|        3. Compare GYMs' prices       |");
+    System.out.println("|        4. Subscribe a GYM            |");
+    System.out.println("-------------------------------");
+    System.out.print(" Select option: ");
+    
+    
+    int x=scanner.nextInt();
+    switch(x) {
+        
+        case 1://display gyms
+            
+            DisplayGYMs(GYMs);
+            
+    
+        break;
+         
+        case 2:
+             Display_GYMs_inCity(GYMs, scanner) ;
+           
+   
+          break;
+                
+       case 3:
+           Compare_GYMs(GYMs, scanner);
+          
+           
+           break;
+           
+        case 4:
+            
+           Subscribe_GYM(GYMs, scanner);
+//             System.out.print("Thank you for using Fitness App, Bye!");
+             break;
+  default:
+      System.out.println("Invalid choice. Try again.");
+    } // code block
+      
 }
+    
+     private static void DisplayGYMs(GYMinfo[] GYMs) {
+         System.out.print("GYMs information  \n");
+         for(int j=0; j<GYMs.length;j++){
+         System.out.print( j+1 +"-"+GYMs[j] +"\n");    }
+    }
+    
+    private static void Display_GYMs_inCity(GYMinfo[] GYMs, Scanner scanner) {
+         
+         GYMinfo[] tmp = new GYMinfo[4];
+         System.out.println("What's the name of your city?");
+         String city = scanner.next();
+         
+         
+         if(checkThere(city,GYMs))
+         {
+             System.out.println("-------------------------------");
+             System.out.println( "Avaialbe GYMs at "+city+":");
+             
+             for(int j=0; j<GYMs.length;j++){
+                
+                if( GYMs[j].getGymLocation().equals(city)){ 
+                      System.out.println( j+1 + "- " + GYMs[j].getGymName() + ", " + GYMs[j].getGymDescription()+", "+ GYMs[j].getGymPrice()+" SR" );
+                 }
+              }
+          
+            
+         }else{
+              System.out.println("-------------------------------");
+              System.out.println( "Sorry, currently we don't have any GYMs at your city. Have a look at our online courses!"); 
+               
+             
+         }
+              
+        }
+         
+    
+     private static void Compare_GYMs(GYMinfo[] GYMs, Scanner scanner) {
+         
+
+        
+            System.out.println("-------------------------------");
+   
+            GYMinfo bestPrice = null;
+               
+            int compareFactor = 100000;
+            for(int j=0; j<GYMs.length;j++){
+                
+                 if(GYMs[j].getGymPrice() < compareFactor){ 
+                     
+                    bestPrice = GYMs[j];
+                    compareFactor = GYMs[j].getGymPrice();
+                     
+                 }
+            }
+            
+            
+            System.out.print("Best price GYM at your city is:");
+            System.out.print( bestPrice.getGymName() + "\t which costs: "+ bestPrice.getGymPrice());
+
+    }
+
+   
+    
+    private static boolean checkThere(String city, GYMinfo[] GYMs) {
+         boolean result = false;
+         for(int j=0; j<GYMs.length;j++){
+                
+                if(!GYMs[j].getGymLocation().equals(city)){ 
+                    result = false;
+                }else{
+                    result = true;
+                    break;
+                   
+                }
+          }
+       
+   return result;
+ }
+    
+    
+    private static void Subscribe_GYM(GYMinfo[] GYMs, Scanner scanner) {
+        
+        DisplayGYMs(GYMs);
+        System.out.println();
+        System.out.println("Enter the name of the required GYM:");
+        String requiredGYM = scanner.next();
+        
+        
+        
+         for(int j=0; j<GYMs.length;j++){
+                
+                if(GYMs[j].getGymName().equals(requiredGYM)){ 
+                    
+                    System.out.println("You are successfully subscribed at "+GYMs[j].getGymName()+" GYM");
+                    break;
+                }
+       }
+    
+   }
+}
+
+
+}
+
 
 
