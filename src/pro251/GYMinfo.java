@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg251project;
+package pro251;
 
 
 public class GYMinfo {
