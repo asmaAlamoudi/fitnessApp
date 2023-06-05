@@ -105,8 +105,8 @@ public class Project251 {
                     }
                     break;                    
                 case "5":
-                    diet_Plans(result);
-
+                    
+                    System.out.println(plans.diet_Plans(result));
                     break;
 
                case "6":
@@ -130,21 +130,7 @@ public class Project251 {
             
             
     }
-    public static void diet_Plans(int result){
-        
-        if (result == 0){
-            System.out.println("Diet Plan Type : "
-                    + "\nketo");
-            System.out.println("Description :");
-            System.out.println("One of the crash diets for rapid weight loss is low-carbohydrate and high-fat keto diet.");
-        }else {
-            System.out.println("Diet Plan Type :"
-                    + "\nIntermittent Fasting");
-            System.out.println("Description :");
-            System.out.println("Intermittent fasting diet involves fasting for some period of time in a day");
-        }
-    
-    }
+ 
     
      private static void subscribe_GYM(int result,Scanner scanner,GYMinfo[] GYMs) {
        
