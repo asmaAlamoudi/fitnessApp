@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Reema
  */
 package pro251;
 
@@ -140,7 +138,7 @@ public class GYMinfoTest {
         GYMinfo  GYM = new GYMinfo("ReGYM","For women","Jeddah",3000);
        
         System.out.println("DisplayGYMs");
-        String expected =  "Name= " + "ReGYM" + ",\tDescription= " + "For women" + ",\tLocation= " + "Jeddah" +" city"+ ",\tPrice= " + 3000 +" SR"+"";
+        String expected =  "Name= " + "ReGYM" + " GYM,\tDescription= " + "For women" + ",\tLocation= " + "Jeddah" +" city"+ ",\tPrice= " + 3000 +" SAR"+"";
     
       assertEquals(expected, GYMinfo.DisplayGYM(GYM));
     }
