@@ -13,9 +13,12 @@ public class GYMinfo {
     String gymLocation;
     int gymPrice;
 
-    GYMinfo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+      static String DisplayGYM(GYMinfo GYM) {
+      
+        return GYM+ "";
     }
+      
 
     public String getGymName() {
         return gymName;
