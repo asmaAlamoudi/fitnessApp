@@ -15,7 +15,7 @@ public class Project251 {
         String name = scanner.nextLine();
         System.out.print("Enter your age: ");
         int age = scanner.nextInt();
-        System.out.print("Enter your height in meters: ");
+        System.out.print("Enter your height in centimeters: ");
         double height = scanner.nextDouble();
         System.out.print("Enter your weight in kilograms: ");
         double weight = scanner.nextDouble();
