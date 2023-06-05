@@ -50,11 +50,14 @@ public class Project251 {
         GYMs[2] = new GYMinfo("Fitness","for women and men","Jeddah",2500 );
        
         GYMs[3] = new GYMinfo("Strength","for women and men","Riyadh",2000 );
+        
         Service service = new Service();
         
         String serviceNum= "";
        
-            System.out.println("-------------------------------");
+            System.out.println("===============================");
+            System.out.println("        SERVICES MENU          ");
+            System.out.println("===============================");
             System.out.println("1. Add workout");
             System.out.println("2. Remove workout");
             System.out.println("3. Display workouts");
@@ -115,7 +118,7 @@ public class Project251 {
                 
                 
                 case "7":
-                    System.out.println("Exiting program...");
+                     System.out.print("Thank you for using Fitness App, Bye!");
                     break;
                 default:
                     System.out.println("Invalid choice. Try again.");
@@ -135,13 +138,13 @@ public class Project251 {
      private static void subscribe_GYM(int result,Scanner scanner,GYMinfo[] GYMs) {
        
      // Display menu 
-    System.out.println("============================");
-    System.out.println("|   SUBSCRIBTION MENU      |");
-    System.out.println("============================");
-    System.out.println("|        1. Display avalible GYMs      |");
-    System.out.println("|        2. Display GYMs in my city    |");
-    System.out.println("|        3. Compare GYMs' prices       |");
-    System.out.println("|        4. Subscribe a GYM            |");
+    System.out.println("===============================");
+    System.out.println("|   SUBSCRIBTION MENU           |");
+    System.out.println("===============================");
+    System.out.println("| 1. Display avalible GYMs      |");
+    System.out.println("| 2. Display GYMs in my city    |");
+    System.out.println("| 3. Compare GYMs' prices       |");
+    System.out.println("| 4. Subscribe a GYM            |");
     System.out.println("-------------------------------");
     System.out.print(" Select option: ");
     
@@ -171,8 +174,8 @@ public class Project251 {
         case 4:
             
            Subscribe_GYM(GYMs, scanner);
-//             System.out.print("Thank you for using Fitness App, Bye!");
-             break;
+            
+           break;
   default:
       System.out.println("Invalid choice. Try again.");
     } // code block
@@ -268,7 +271,7 @@ public class Project251 {
         
         
         
-         for(int j=0; j<GYMs.length;j++){
+         for(int j=0; j < GYMs.length;j++){
                 
                 if(GYMs[j].getGymName().equals(requiredGYM)){ 
                     
